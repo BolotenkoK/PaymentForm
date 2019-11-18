@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/style-mobile.css", media="screen and (max-width: 767px)")
+        link(rel="stylesheet", href="css/style-tablet.css", media="screen and (min-width: 768px) and (max-width: 1023px)")
+        link(rel="stylesheet", href="css/style-desktop.css", media="screen and (min-width: 1024px)")
+        script(src='dist/assets/validate.js')
+        script(src='dist/assets/underscore.js')
+        script(src='js/validator.js')
+        script(src='js/card-hint.js')
+        title Document
+        
+    body
+        section.modal-block
+            h2.modal-block__title Thank you for choosing to subscribe to PDFfiller services!
+            .modal-block__content
+                .cards.hide-sm.hide-lg
+                    .cards__card.cards__card-visa(title="Visa")
+                    .cards__card.cards__card-mastercard(title="Mastercard")
+                    .cards__card.cards__card-americanexpress(title="Americanexpress")
+                    .cards__card.cards__card-discover(title="Discover")
+                form(action=".", id="paymentForm", class="payment-form", method="post")
+                    .input-block
+                        .input-block__wrap
+                            label(title="Cardholder name.") Cardholder name
+                            .input-block__controllers-wrap 
+                                .form-group
+                                    .div                            
+                                        .messages
+                                        .input-block__controller-wrap
+                                            input.input-block__controll.input-block__controll-first-name(type="text", id="firstName", name="firstName", placeholder="First name") 
+                                .form-group
+                                    .div 
+                                        .messages
+                                        .input-block__controller-wrap    
+                                            input.input-block__controll.input-block__controll-last-name(type="text", id="lastName", name="lastName", placeholder="Last name")
+                    .input-block.form-group
+                        .input-block__wrap
+                            label(for="cardNumber") Card Number
+                            .messages
+                            .input-block__controllers-wrap
+                                input.input-block__controll.input-block__controll-card-number(type="text", id="cardNumber", name="cardNumber", placeholder="⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁") 
+                                .cards.hide-xs
+                                    .cards__card.cards__card-visa(title="Visa")
+                                    .cards__card.cards__card-mastercard(title="Mastercard")
+                                    .cards__card.cards__card-americanexpress(title="Americanexpress")
+                                    .cards__card.cards__card-discover(title="Discover")
+                    .input-block
+                        .input-block__wrap.input-block__wrap_w-auto
+                            label(title="Expiration date.") Exp. Date
+                            .input-block__controllers-wrap
+                                .form-group
+                                    .div
+                                        .messages   
+                                        .input-block__controll-wrap  
+                                            input.input-block__controll.input-block__controll-month(type="text", id="month", name="month", list="month-list", placeholder="ММ") 
+                                            .input-block__controll-arrow
+                                            datalist(id="month-list")
+                                                option(value="01")
+                                                option(value="02")
+                                                option(value="03")
+                                                option(value="04")
+                                                option(value="05")
+                                                option(value="06")
+                                                option(value="07")
+                                                option(value="08")
+                                                option(value="09")
+                                                option(value="10")
+                                                option(value="11")
+                                                option(value="12")
+                                span.input-block__delimiter /
+                                .form-group
+                                    .div
+                                        .messages
+                                        .input-block__controll-wrap  
+                                            input.input-block__controll.input-block__controll-year(type="text", id="year", name="year", list="year-list", placeholder="YYYY") 
+                                            .input-block__controll-arrow.input-block__controll-arrow_right-22
+                                            datalist(id="year-list")
+                                                option(value="2019")
+                                                option(value="2020")
+                                                option(value="2021")
+                                                option(value="2022")
+                                                option(value="2023")
+                                                option(value="2024")
+                                                option(value="2025")
+                                                option(value="2026")
+                                                option(value="2027")
+                                                option(value="2028")
+                        .input-block__wrap.input-block__wrap_w-auto.form-group
+                            label(title="Card verification code.") CVC/CVV 
+                            .messages       
+                            input.input-block__controll.input-block__controll-verification-code(type="text", id="cvvCvc", name="cvvCvc", placeholder="XXX") 
+                            .input-block__controll-hint-icon(id="hintIcon")
+                            .form-hint
+                                .form-hint__wrap
+                                    img.form-hint__icon(src="img/vcv-sprite.svg#visa", alt="Visa & MasterCard verification code.")
+                                    h6.form-hint__title Visa, MasterCard
+                                    p.form-hint__text 3-Digit Verification Number
+                                hr.form-hint__delimiter
+                                .form-hint__wrap
+                                    img.form-hint__icon(src="img/vcv-sprite.svg#AE", alt="American Express verification code.")
+                                    h6.form-hint__title American Express
+                                    p.form-hint__text 4-Digit Verification Number
+
+                    .input-block.form-group
+                        .input-block__wrap
+                            label(title="Zip code.") Zip Code
+                            .messages        
+                            input.input-block__controll.input-block__controll-zip-code(type="text", id="zipCode", name="zipCode", placeholder="01001") 
+                    button.pay-pal-btn.hide-lg
+                        a.pay-pal-btn__link(href="#") Or pay with Paypal
+                            img.pay-pal-btn__icon(src="img/pay-pal.svg", alt="PayPal payment system.")
+                    button.form-btn(type="submit") Start My Subscriptio for $19.99/mo.
+                button.pay-pal-btn.hide-xs.hide-sm
+                    a.pay-pal-btn__link(href="#") Or pay with Paypal
+                        img.pay-pal-btn__icon(src="img/pay-pal.svg", alt="PayPal payment system.")

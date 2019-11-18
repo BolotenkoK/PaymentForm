@@ -1,0 +1,65 @@
+@import 'mixin';
+
+* {
+    box-sizing: border-box;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+fieldset {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-block-start: 0em;
+    padding-inline-start: 0em;
+    padding-inline-end: 0em;
+    padding-block-end: 0em;
+    border: none;
+    legend {  
+        padding-inline-start: 0px;
+        padding-inline-end: 0px;
+        margin-bottom: 9px;
+    }
+}
+
+body {
+    font: {
+        family: Arial, sans-serif;
+        size: 14px;
+        weight: 700;
+    }
+    color: $main-text-color;
+    line-height: 14px;
+    margin: 0;
+    background-color:#f3f0ec;
+    overflow-x: hidden;
+}
+
+.has-error {
+    input {
+        border: solid 1px #ef5350;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .hide-xs {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .hide-sm {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hide-lg {
+        display: none!important;
+    }
+}
